@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ScreenProject.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ScreenProject.Models
 {
-    public class Event
+    public class Event: IBaseModel
     {
         public int Id { get; set; }
         public int TemplateId { get; set; }

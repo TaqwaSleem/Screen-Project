@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScreenProject.Interfaces;
+using ScreenProject.persistant;
 
 namespace ScreenProject
 {
@@ -31,6 +33,13 @@ namespace ScreenProject
             {
                 builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+            services.AddScoped<IEventRepo, EventRepo>();
+            services.AddScoped<IEventFieldRepo, EventFieldRepo>();
+            services.AddScoped<ITemplateRepo, TemplateRepo>();
+            services.AddScoped<ITemplateFieldRepo, TemplateFieldRepo>();
+
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
