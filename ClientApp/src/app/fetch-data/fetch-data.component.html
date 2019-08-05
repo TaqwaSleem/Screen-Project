@@ -1,4 +1,35 @@
-<h1>Weather forecast</h1>
+
+<div class="grid-container" style="height: calc(100vh )">
+
+  <div style="width: 543px; height: 314px; " class="container" *ngFor="let item of events" [style.background]="'url('+item.myTemplate.backGroundImg+')'">
+
+    <!--<div *ngFor="let item of events" [style.font-size.px]="myTemplate.templateFields.fontSize" [style.color]="myTemplate.templateFields.fontColor" [style.font-family]="myTemplate.templateFields.fontFamily" [style.margin-left.px]="myTemplate.templateFields.leftPosition" [style.margin-top.px]="myTemplate.templateFields.topPosition" [style.font-style]="myTemplate.templateFields.fontStyle" [style.font-weight]="myTemplate.templateFields.fontWeight"
+           class="event-field-demo">{{ myTemplate.templateFields.eventFields.Value }}</div>
+    </div>-->
+    <!--<div *ngFor="let item of events" [style.font-size.px]="+item.myTemplate.templateFields.fontSize" [style.color]="+item.myTemplate.templateFields.fontColor" [style.font-family]="+item.myTemplate.templateFields.fontFamily" [style.margin-left.px]="+item.myTemplate.templateFields.leftPosition" [style.margin-top.px]="+item.myTemplate.templateFields.topPosition" [style.font-style]="+item.myTemplate.templateFields.fontStyle" [style.font-weight]="+item.myTemplate.templateFields.fontWeight"
+           class="event-field-demo">{{ myTemplate.templateFields.eventFields.Value }}</div>
+    </div>-->
+    <div *ngFor="let eventfield of item.eventFields" [style.font-size.px]="eventfield.myTemplateField.fontSize" [style.color]="eventfield.myTemplateField.fontColor" [style.font-family]="eventfield.myTemplateField.fontFamily" [style.margin-left.px]="eventfield.myTemplateField.leftPosition" [style.margin-top.px]="eventfield.myTemplateField.topPosition" [style.font-style]="eventfield.myTemplateField.fontStyle" [style.font-weight]="eventfield.myTemplateField.fontWeight" class="event-field-demo">{{ eventfield.value }}</div>
+    <!--<div *ngFor="let event of events" [style.background-image]="'url(' + event.background + ')'" class="event-demo">-->
+
+  </div>
+
+</div>
+
+<!--<div class="grid-container" style="height: calc(100vh )">
+
+  <div style="width: 543px; height: 314px; border :1px solid dashed ;background-size: cover;" class="container" *ngFor="let item of events" [style.background]="'url('+item.myTemplate.backGroundImg+')'">
+  </div>
+
+
+
+</div>-->
+<!--<div class="grid-container" style="height: calc(100vh ); width: calc(100vh )">
+
+  <div style="width: 543px; height: 314px; background-size: cover;background-position: center;border :1px solid dashed " *ngFor="let item of events" [style.background]="'url('+item.myTemplate.backGroundImg+')'">
+  </div>
+</div>-->
+<!--<h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
@@ -21,4 +52,5 @@
       <td>{{ forecast.summary }}</td>
     </tr>
   </tbody>
-</table>
+</tab
+le>-->
