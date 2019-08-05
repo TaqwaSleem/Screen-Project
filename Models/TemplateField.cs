@@ -16,6 +16,8 @@ namespace ScreenProject.Models
         public int FontSize { get; set; }
         public string FontColor { get; set; }
         public string FontFamily { get; set; }
+        public string FontWeight { get; set; }
+        public string FontStyle { get; set; }
 
         public Template MyTemplate { get; set; }
         public ICollection<EventField> EventFields { get; set; }

@@ -1,6 +1,7 @@
 ﻿using ScreenProject.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace ScreenProject.Models
 {
     public class Employee: IBaseModel
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }

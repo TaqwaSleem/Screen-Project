@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScreenProject.Interfaces;
 using ScreenProject.persistant;
+using System;
 
 namespace ScreenProject
 {
@@ -39,6 +41,8 @@ namespace ScreenProject
             services.AddScoped<IEventFieldRepo, EventFieldRepo>();
             services.AddScoped<ITemplateRepo, TemplateRepo>();
             services.AddScoped<ITemplateFieldRepo, TemplateFieldRepo>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
             // In production, the Angular files will be served from this directory
