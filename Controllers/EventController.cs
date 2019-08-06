@@ -46,14 +46,14 @@ namespace ScreenProject.Controllers
 
         // GET: api/<controller>
         [HttpGet("GetAnnualMonthlyDailyAndOnce")]
-        public List<Event> GetAnnualMonthlyDailyAndOnce()        {
+        public List<EventViewModel> GetAnnualMonthlyDailyAndOnce()        {
 
 
             List<Event> eventList = _IEventRepo.GetAnnualMonthlyDailyAndOnce();
-            //List<EventViewModel> eventviewmodel = _mapper.Map<List<EventViewModel>>(eventList);
+            List<EventViewModel> eventviewmodel = _mapper.Map<List<EventViewModel>>(eventList);
 
-            //return eventviewmodel;
-            return eventList;        }
+            return eventviewmodel;
+            //return eventList;        }
         [HttpGet]
         public List<Event> GetAll()
         {

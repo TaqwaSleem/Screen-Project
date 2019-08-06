@@ -7,15 +7,17 @@ namespace ScreenProject.ViewModels
 {
     public class EventViewModel
     {
-
         public int Id { get; set; }
+        public int TemplateId { get; set; }
         public TimeSpan StartDate { get; set; }
         public TimeSpan EndDate { get; set; }
+        public DateTime Date { get; set; }
+        public string Repeat { get; set; }
+        public int Priority { get; set; }
 
-        public int Priority { get; set;}
-        public string Name { get; set; }
-        public string BackGroundImg { get; set; }
-        public string Value { get; set; }
+
+        public TemplateViewModel MyTemplate { get; set; }
+        public ICollection<EventFieldViewModel> EventFields { get; set; }
 
 
     }

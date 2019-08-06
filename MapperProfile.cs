@@ -14,6 +14,10 @@ namespace ScreenProject
         {
 
             CreateMap<Event, EventViewModel>().ReverseMap();
+            CreateMap<Employee, EmployeeViewModel>().ReverseMap();
+            CreateMap<Template, TemplateViewModel>().ReverseMap();
+            CreateMap<TemplateField, TemplateFieldViewModel>().ReverseMap();
+            CreateMap<EventField, EventFieldViewModel>().ReverseMap();
 
             //CreateMap<Event, EventViewModel>().ForMember(c => c.BackGroundImg, map => map.MapFrom(c => c.MyTemplate.BackGroundImg))
             //    .ForMember(c => c.Name, map => map.MapFrom(c => c.MyTemplate.Name))

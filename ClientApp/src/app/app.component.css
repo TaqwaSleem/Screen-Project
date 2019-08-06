@@ -1,13 +1,7 @@
 /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
-/*@media (max-width: 767px) {
 
-  .body-content {
-    padding-top: 50px;
-  }
-}*/
-
-.container {
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-}
+body {
+  padding: 0px ;
+  flex-basis: 0;
+  margin: 0px;
+}
