@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using ScreenProject.Interfaces;
 using ScreenProject.Models;
 using ScreenProject.ViewModels;
@@ -17,15 +18,19 @@ namespace ScreenProject.Controllers
 
     public class EventController : Controller
     {
+        private readonly IOptions<setData> _options;
         private IMapper _mapper;
         private IEventRepo _IEventRepo;
-        public EventController(IEventRepo IeventRepo, IMapper mapper)
+        public EventController(IEventRepo IeventRepo, IMapper mapper, IOptions<setData> options)
         {
             _IEventRepo = IeventRepo;
             _mapper = mapper;
+            _options = options;
 
         }
 
+        [HttpGet("setData")]
+        public setData Get()        {            return _options.Value;        }
 
         // GET: api/<controller>
         [HttpGet("annual")]        public List<Event> GetAllAnnual()        {            return _IEventRepo.GetAllAnnual();        }

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScreenProject.Interfaces;
+using ScreenProject.Models;
 using ScreenProject.persistant;
 using System;
 
@@ -44,6 +45,7 @@ namespace ScreenProject
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            services.Configure<setData>(Configuration.GetSection("setData"));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

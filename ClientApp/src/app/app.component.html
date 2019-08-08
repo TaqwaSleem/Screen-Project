@@ -6,16 +6,11 @@
 </body>-->
 
 
-<div style="height: calc(100vh) ; width: calc(100vw)">
-
-  <div style="height: calc(100vh ) ; width:100% " class="t" [style.background]="'url('+selectedEvent.myTemplate.backGroundImg+')'">
-
-    <div style="position:absolute" *ngFor="let eventfield of selectedEvent.eventFields" [style.font-size.px]="eventfield.myTemplateField.fontSize" [style.color]="eventfield.myTemplateField.fontColor" [style.font-family]="eventfield.myTemplateField.fontFamily" [style.left.px]="eventfield.myTemplateField.leftPosition" [style.top.%]="eventfield.myTemplateField.topPosition" [style.font-style]="eventfield.myTemplateField.fontStyle" [style.font-weight]="eventfield.myTemplateField.fontWeight" class="event-field-demo">{{ eventfield.value }}</div>
-    <!--<div *ngFor="let event of events" [style.background-image]="'url(' + event.background + ')'" class="event-demo">-->
-
+<div class="t" [style.background]="'url('+selectedbackground+')'">  <div *ngIf="selectedEvent">    <!--selectedEvent.myTemplate.backGroundImg-->    <div style="position:absolute" *ngFor="let eventfield of selectedEvent.eventFields" [style.font-size.px]="eventfield.myTemplateField.fontSize" [style.color]="eventfield.myTemplateField.fontColor" [style.font-family]="eventfield.myTemplateField.fontFamily" [style.left.px]="eventfield.myTemplateField.leftPosition" [style.top.%]="eventfield.myTemplateField.topPosition" [style.font-style]="eventfield.myTemplateField.fontStyle" [style.font-weight]="eventfield.myTemplateField.fontWeight"         class="event-field-demo">{{ eventfield.value }}</div>
   </div>
 
 </div>
+
 
 
 <!--<div *ngFor="let item of events" [style.font-size.px]="myTemplate.templateFields.fontSize" [style.color]="myTemplate.templateFields.fontColor" [style.font-family]="myTemplate.templateFields.fontFamily" [style.margin-left.px]="myTemplate.templateFields.leftPosition" [style.margin-top.px]="myTemplate.templateFields.topPosition" [style.font-style]="myTemplate.templateFields.fontStyle" [style.font-weight]="myTemplate.templateFields.fontWeight"
