@@ -1,26 +1,25 @@
-//import { Component } from '@angular/core';
-
-//@Component({
-//  selector: 'app-root',
-//  templateUrl: './app.component.html',
-//  styleUrls: ['./app.component.css']
-//})
-//export class AppComponent {
-//  title = 'app';
-//}
-
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-@Component({  selector: 'app-root',
+@Component({
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']})
+  styleUrls: ['./app.component.css']
+})
 export class AppComponent {
   public events: any[];
-  public interval = 1000000;
+  public interval = 3600000;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+
+  SwappingTime = 2000;        //swapp
+
+
+
+  selectedEventIndex = 0;
+  selectedEvent: any;
+
+    constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.GetEvents(http, baseUrl);
     this.Reload(http, baseUrl);
 
@@ -29,9 +28,12 @@ export class AppComponent {
   GetEvents(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<any[]>(baseUrl + 'api/Event/GetAnnualMonthlyDailyAndOnce').subscribe(result => {
       this.events = result;
+
+      this.selectedEvent = this.events[this.selectedEventIndex];
+      this.Swap();
+
     }, error => console.error(error));
   }
-
 
   Reload(http: HttpClient, @Inject('BASE_URL') baseUrl: string): void {
     setInterval(() => {
@@ -41,5 +43,19 @@ export class AppComponent {
   }
 
 
-}
+  Swap(): void {
+
+    setInterval(() => {
+      this.selectedEventIndex = (this.selectedEventIndex + 1) % this.events.length;
+      this.selectedEvent = this.events[this.selectedEventIndex];
+    }, this.SwappingTime);
+
+
+  }
+
+
+  }
+
+
+
 

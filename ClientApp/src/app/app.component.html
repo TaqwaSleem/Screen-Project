@@ -6,11 +6,11 @@
 </body>-->
 
 
-<div style="height: calc(100vh ) ; width: calc(100vw )">
+<div style="height: calc(100vh) ; width: calc(100vw)">
 
-  <div style="height: calc(100vh ) ; width:100% " class="t" *ngFor="let item of events" [style.background]="'url('+item.myTemplate.backGroundImg+')'">
+  <div style="height: calc(100vh ) ; width:100% " class="t" [style.background]="'url('+selectedEvent.myTemplate.backGroundImg+')'">
 
-    <div style="position:absolute" *ngFor="let eventfield of item.eventFields" [style.font-size.px]="eventfield.myTemplateField.fontSize" [style.color]="eventfield.myTemplateField.fontColor" [style.font-family]="eventfield.myTemplateField.fontFamily" [style.margin-left.px]="eventfield.myTemplateField.leftPosition" [style.margin-top.px]="eventfield.myTemplateField.topPosition" [style.font-style]="eventfield.myTemplateField.fontStyle" [style.font-weight]="eventfield.myTemplateField.fontWeight" class="event-field-demo">{{ eventfield.value }}</div>
+    <div style="position:absolute" *ngFor="let eventfield of selectedEvent.eventFields" [style.font-size.px]="eventfield.myTemplateField.fontSize" [style.color]="eventfield.myTemplateField.fontColor" [style.font-family]="eventfield.myTemplateField.fontFamily" [style.left.px]="eventfield.myTemplateField.leftPosition" [style.top.%]="eventfield.myTemplateField.topPosition" [style.font-style]="eventfield.myTemplateField.fontStyle" [style.font-weight]="eventfield.myTemplateField.fontWeight" class="event-field-demo">{{ eventfield.value }}</div>
     <!--<div *ngFor="let event of events" [style.background-image]="'url(' + event.background + ')'" class="event-demo">-->
 
   </div>
